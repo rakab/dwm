@@ -16,10 +16,16 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
+static char normbordercolor[] = "#444444";
+static char normbgcolor[]     = "#222222";
+static char normfgcolor[]     = "#bbbbbb";
+static char selbordercolor[]  = "#005577";
+static char selbgcolor[]      = "#005577";
+static char selfgcolor[]      = "#eeeeee";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+	[SchemeSel]  = { selfgcolor, selbgcolor,  selbordercolor  },
 };
 
 /* tagging */
@@ -132,6 +138,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period,           focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,            tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,           tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_n,                xrdb,           {.v = NULL } },
 	TAGKEYS(                        XK_1,                                0)
 	TAGKEYS(                        XK_2,                                1)
 	TAGKEYS(                        XK_3,                                2)
@@ -161,3 +168,4 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
 
+static const char *xres = "/home/bakar/.Xresources";
