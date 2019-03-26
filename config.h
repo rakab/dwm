@@ -94,6 +94,9 @@ static const char *m_lilfor[]  = { "mpc", "seek", "+10", NULL };
 static const char *m_bigfor[]  = { "mpc", "seek", "+120", NULL };
 static const char *m_lilbak[]  = { "mpc", "seek", "-10", NULL };
 static const char *m_bigbak[]  = { "mpc", "seek", "-120", NULL };
+/* Display brightness controls */
+static const char *b_dec[]  = { "sudo", "brightnessctl", "s", "5%-", NULL };
+static const char *b_inc[]  = { "sudo", "brightnessctl", "s", "10%+", NULL };
 
 static Key keys[] = {
 	/* modifier                     key                  function        argument */
@@ -115,6 +118,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_semicolon,        spawn,          {.v = m_prev } },
 	{ MODKEY,                       XK_equal,            spawn,          {.v = v_inc } },
 	{ MODKEY,                       XK_minus,            spawn,          {.v = v_dec } },
+	{ MODKEY|ShiftMask,             XK_equal,            spawn,          {.v = b_inc } },
+	{ MODKEY|ShiftMask,             XK_minus,            spawn,          {.v = b_dec } },
 	{ MODKEY,                       XK_b,                togglebar,      {0} },
 	{ MODKEY,                       XK_j,                focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                focusstack,     {.i = -1 } },
@@ -138,7 +143,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period,           focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,            tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,           tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_n,                xrdb,           {.v = NULL } },
+	{ MODKEY,                       XK_F5,               xrdb,           {.v = NULL } },
 	TAGKEYS(                        XK_1,                                0)
 	TAGKEYS(                        XK_2,                                1)
 	TAGKEYS(                        XK_3,                                2)
