@@ -101,6 +101,9 @@ static const char *m_bigbak[]  = { "mpc", "seek", "-120", NULL };
 static const char *b_dec[]  = { "sudo", "brightnessctl", "s", "5%-", NULL };
 static const char *b_inc[]  = { "sudo", "brightnessctl", "s", "10%+", NULL };
 
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
+
 static Key keys[] = {
 	/* modifier                     key                  function        argument */
 	{ MODKEY,                       XK_d,                spawn,          {.v = dmenucmd } },
@@ -123,6 +126,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_minus,            spawn,          {.v = v_dec } },
 	{ MODKEY|ShiftMask,             XK_equal,            spawn,          {.v = b_inc } },
 	{ MODKEY|ShiftMask,             XK_minus,            spawn,          {.v = b_dec } },
+	{ MODKEY,                       XK_grave,            togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,                togglebar,      {0} },
 	{ MODKEY,                       XK_j,                focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                focusstack,     {.i = -1 } },
