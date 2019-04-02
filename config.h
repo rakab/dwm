@@ -40,6 +40,9 @@ static const Rule rules[] = {
 	{ "Gimp",          NULL,              NULL,           0,            1,           -1 },
 	{ "Firefox",       NULL,              NULL,           1 << 8,       0,           -1 },
 	{ "VidyoDesktop",  "VidyoDesktop",    "VidyoDesktop", 0,            1,           -1 },
+	{ "ROOT",          "Browser",         NULL,           0,            1,           -1 },
+	{ "ROOT",          "Canvas",          NULL,           1 << 8,       0,           -1 },
+	{ NULL,            NULL,              "_Editor",      0,            1,           -1 },
 };
 
 /* layout(s) */
