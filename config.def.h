@@ -9,6 +9,7 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const double defaultopacity  = 0.75;
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
@@ -109,6 +110,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
+	{ MODKEY|ShiftMask,		        XK_s,	   spawn,	       SHCMD("transset-df -a --dec .1") },
+	{ MODKEY|ShiftMask,		        XK_d,	   spawn,	       SHCMD("transset-df -a --inc .1") },
+	{ MODKEY|ShiftMask,		        XK_f,	   spawn,	       SHCMD("transset-df -a .75") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
