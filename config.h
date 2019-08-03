@@ -111,7 +111,7 @@ static const char *b_dec[]  = { "sudo", "brightnessctl", "s", "5%-", NULL };
 static const char *b_inc[]  = { "sudo", "brightnessctl", "s", "10%+", NULL };
 
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", "tmuxinit", NULL };
 
 static Key keys[] = {
 	/* modifier                     key                  function        argument */
