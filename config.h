@@ -9,6 +9,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static int floatposgrid_x           = 5;        /* float grid columns */
+static int floatposgrid_y           = 5;        /* float grid rows */
 static const double defaultopacity  = 1.0;
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
@@ -166,6 +168,23 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		        XK_s,	             spawn,	         SHCMD("transset -a --dec .1") },
 	{ MODKEY|ShiftMask,		        XK_d,	             spawn,	         SHCMD("transset -a --inc .1") },
 	{ MODKEY|ShiftMask,		        XK_f,	             spawn,	         SHCMD("transset -a .8") },
+	{ Mod1Mask,                     XK_u,        floatpos,   {.v = "-26x -26y" } }, // ↖
+	{ Mod1Mask,                     XK_i,        floatpos,   {.v = "  0x -26y" } }, // ↑
+	{ Mod1Mask,                     XK_o,        floatpos,   {.v = " 26x -26y" } }, // ↗
+	{ Mod1Mask,                     XK_j,        floatpos,   {.v = "-26x   0y" } }, // ←
+	{ Mod1Mask,                     XK_l,        floatpos,   {.v = " 26x   0y" } }, // →
+	{ Mod1Mask,                     XK_m,        floatpos,   {.v = "-26x  26y" } }, // ↙
+	{ Mod1Mask,                     XK_comma,    floatpos,   {.v = "  0x  26y" } }, // ↓
+	{ Mod1Mask,                     XK_period,   floatpos,   {.v = " 26x  26y" } }, // ↘
+	{ Mod1Mask|ShiftMask,           XK_u,        floatpos,   {.v = "-26w -26h" } }, // ↖
+	{ Mod1Mask|ShiftMask,           XK_i,        floatpos,   {.v = "  0w -26h" } }, // ↑
+	{ Mod1Mask|ShiftMask,           XK_o,        floatpos,   {.v = " 26w -26h" } }, // ↗
+	{ Mod1Mask|ShiftMask,           XK_j,        floatpos,   {.v = "-26w   0h" } }, // ←
+	{ Mod1Mask|ShiftMask,           XK_k,        floatpos,   {.v = "800W 800H" } }, // ·
+	{ Mod1Mask|ShiftMask,           XK_l,        floatpos,   {.v = " 26w   0h" } }, // →
+	{ Mod1Mask|ShiftMask,           XK_m,        floatpos,   {.v = "-26w  26h" } }, // ↙
+	{ Mod1Mask|ShiftMask,           XK_comma,    floatpos,   {.v = "  0w  26h" } }, // ↓
+	{ Mod1Mask|ShiftMask,           XK_period,   floatpos,   {.v = " 26w  26h" } }, // ↘
 	TAGKEYS(                        XK_1,                                0)
 	TAGKEYS(                        XK_2,                                1)
 	TAGKEYS(                        XK_3,                                2)
