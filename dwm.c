@@ -2289,11 +2289,18 @@ togglecanfocus(const Arg *arg)
 
 	if(arg->i==0){
 		selmon->sel->cantfocus = 1;
+        selmon->sel->bw = 0;
+        resizeclient(selmon->sel,selmon->sel->x,selmon->sel->y,selmon->sel->w,selmon->sel->h);
 		c = nexttiled(selmon->clients);
 		focus(c);
 	} else {
-		for (c = selmon->clients; c; c = c->next)
+		for (c = selmon->clients; c; c = c->next){
+			if(c->cantfocus){
+				c->bw = borderpx;
+				resizeclient(c,c->x,c->y,c->w,c->h);
+			}
 			c->cantfocus = 0;
+		}
 	}
 
 	arrange(selmon);
