@@ -141,6 +141,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_minus,            spawn,          {.v = b_dec } },
 	{ MODKEY,                       XK_grave,            togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_s,                togglesticky,   {0} },
+	{ MODKEY|ControlMask,           XK_s,                togglecanfocus, {.i = 0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_s,                togglecanfocus, {.i = 1} },
 	{ MODKEY,                       XK_b,                togglebar,      {0} },
 	{ MODKEY,                       XK_j,                focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,                focusstack,     {.i = -1 } },
