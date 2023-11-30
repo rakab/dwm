@@ -48,7 +48,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class           instance           title          tags mask     isfloating   monitor */
-	{ "Gimp",          NULL,              NULL,           0,            1,           -1 },
+	//{ "Gimp",          NULL,              NULL,           0,            1,           -1 },
 	{ "Firefox",       NULL,              NULL,           1 << 8,       0,           -1 },
 	{ "VidyoDesktop",  "VidyoDesktop",    "VidyoDesktop", 0,            1,           -1 },
 	{ "ROOT",          "Browser",         NULL,           0,            1,           -1 },
@@ -95,9 +95,9 @@ static const char *browser[]  = { "qutebrowser", NULL };
 static const char *network[]  = { "networkmanager_dmenu", NULL };
 static const char *clipboard[]  = { "clipmenu", NULL };
 /* Audio controls */
-static const char *v_inc[]  = { "pamixer", "--allow-boost", "-i", "5", NULL };
+static const char *v_inc[]  = { "mixer", "vol", "+5", NULL };
 static const char *v_biginc[]  = { "pamixer", "--allow-boost", "-i", "15", NULL };
-static const char *v_dec[]  = { "pamixer", "--allow-boost", "-d", "5", NULL };
+static const char *v_dec[]  = { "mixer", "vol", "-5", NULL };
 static const char *v_bigdec[]  = { "pamixer", "--allow-boost", "-d", "15", NULL };
 static const char *v_mute[]  = { "pamixer", "--allow-boost", "-t", NULL };
 /* Music controls */
@@ -170,14 +170,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		        XK_s,	             spawn,	         SHCMD("transset -a --dec .1") },
 	{ MODKEY|ShiftMask,		        XK_d,	             spawn,	         SHCMD("transset -a --inc .1") },
 	{ MODKEY|ShiftMask,		        XK_f,	             spawn,	         SHCMD("transset -a .8") },
-	{ Mod1Mask,                     XK_u,        floatpos,   {.v = "-26x -26y" } }, // ↖
-	{ Mod1Mask,                     XK_i,        floatpos,   {.v = "  0x -26y" } }, // ↑
-	{ Mod1Mask,                     XK_o,        floatpos,   {.v = " 26x -26y" } }, // ↗
-	{ Mod1Mask,                     XK_j,        floatpos,   {.v = "-26x   0y" } }, // ←
-	{ Mod1Mask,                     XK_l,        floatpos,   {.v = " 26x   0y" } }, // →
-	{ Mod1Mask,                     XK_m,        floatpos,   {.v = "-26x  26y" } }, // ↙
-	{ Mod1Mask,                     XK_comma,    floatpos,   {.v = "  0x  26y" } }, // ↓
-	{ Mod1Mask,                     XK_period,   floatpos,   {.v = " 26x  26y" } }, // ↘
+	{ Mod1Mask|ControlMask,         XK_u,        floatpos,   {.v = "-26x -26y" } }, // ↖
+	{ Mod1Mask|ControlMask,         XK_i,        floatpos,   {.v = "  0x -26y" } }, // ↑
+	{ Mod1Mask|ControlMask,         XK_o,        floatpos,   {.v = " 26x -26y" } }, // ↗
+	{ Mod1Mask|ControlMask,         XK_j,        floatpos,   {.v = "-26x   0y" } }, // ←
+	{ Mod1Mask|ControlMask,         XK_l,        floatpos,   {.v = " 26x   0y" } }, // →
+	{ Mod1Mask|ControlMask,         XK_m,        floatpos,   {.v = "-26x  26y" } }, // ↙
+	{ Mod1Mask|ControlMask,         XK_comma,    floatpos,   {.v = "  0x  26y" } }, // ↓
+	{ Mod1Mask|ControlMask,         XK_period,   floatpos,   {.v = " 26x  26y" } }, // ↘
 	{ Mod1Mask|ShiftMask,           XK_u,        floatpos,   {.v = "-26w -26h" } }, // ↖
 	{ Mod1Mask|ShiftMask,           XK_i,        floatpos,   {.v = "  0w -26h" } }, // ↑
 	{ Mod1Mask|ShiftMask,           XK_o,        floatpos,   {.v = " 26w -26h" } }, // ↗
