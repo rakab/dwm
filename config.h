@@ -53,7 +53,7 @@ static const Rule rules[] = {
 	{ "ROOT",     "Browser",     NULL,       0,            1,           NULL,      -1 },
 	{ "ROOT",     "Canvas",      NULL,       1 << 8,       0,           NULL,      -1 },
 	{ NULL,       NULL,          "_Editor",  0,            1,           NULL,      -1 },
-	{ "mpv",      "mpvFloating", NULL,       1,            1,           NULL,      -1 },
+	{ "mpv",      "mpvFloating", NULL,       0,            1,           "5p 5p",   -1 },
 };
 
 /* layout(s) */
