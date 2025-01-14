@@ -89,15 +89,16 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", "tmux", "new", NULL };
 static const char *termcmd1[] = { "st", NULL };
-static const char *mail[]  = { "dwm_mutt", NULL};
+//static const char *mail[]  = { "dwm_mutt", NULL};
+static const char *mail[]  = { "st", "dwm_mutt", NULL};
 static const char *ranger[]  = { "st", "-e", "ranger", NULL };
 static const char *browser[]  = { "qutebrowser", NULL };
 static const char *network[]  = { "networkmanager_dmenu", NULL };
 static const char *clipboard[]  = { "clipmenu", NULL };
 /* Audio controls */
-static const char *v_inc[]  = { "mixer", "vol", "+5", NULL };
+static const char *v_inc[]  = { "mixer", "vol.volume=+0.05", NULL };
 static const char *v_biginc[]  = { "pamixer", "--allow-boost", "-i", "15", NULL };
-static const char *v_dec[]  = { "mixer", "vol", "-5", NULL };
+static const char *v_dec[]  = { "mixer", "vol.volume=-0.05", NULL };
 static const char *v_bigdec[]  = { "pamixer", "--allow-boost", "-d", "15", NULL };
 static const char *v_mute[]  = { "pamixer", "--allow-boost", "-t", NULL };
 /* Music controls */
