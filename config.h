@@ -113,6 +113,7 @@ static const char *m_bigbak[]  = { "mpc", "seek", "-120", NULL };
 /* Display brightness controls */
 static const char *b_dec[]  = { "backlight", "-", "5", NULL };
 static const char *b_inc[]  = { "backlight", "+", "10", NULL };
+static const char *xlock[]  = { "xscreensaver-command", "--lock", NULL };
 
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", "tmuxinit", NULL };
@@ -151,6 +152,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_i,                incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,                setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,                setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_l,                spawn,          {.v = xlock} },
 	{ MODKEY|ShiftMask,             XK_Return,           zoom,           {.v = termcmd } },
 	{ MODKEY,                       XK_Tab,              view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,                killclient,     {0} },
