@@ -123,6 +123,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,                spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,           spawn,          {.v = termcmd1 } },
 	/*{ MODKEY|ShiftMask,             XK_Return,           spawn,          {.v = termcmd1 } },*/
+	{ MODKEY,                       XK_u,                spawn,          {.v = (const char*[]){ "dmenuunicode", NULL } } },
 	{ MODKEY,                       XK_e,                spawn,          {.v = mail } },
 	{ MODKEY|ShiftMask,             XK_w,                spawn,          {.v = browser } },
 	{ MODKEY,                       XK_w,                spawn,          {.v = network } },
