@@ -47,13 +47,14 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance       title       tags mask     isfloating   floatpos   monitor */
-	{ "Gimp",     NULL,          NULL,       0,            1,           NULL,      -1 },
-	{ "Firefox",  NULL,          NULL,       1 << 8,       0,           NULL,      -1 },
-	{ "ROOT",     "Browser",     NULL,       0,            1,           NULL,      -1 },
-	{ "ROOT",     "Canvas",      NULL,       1 << 8,       0,           NULL,      -1 },
-	{ NULL,       NULL,          "_Editor",  0,            1,           NULL,      -1 },
-	{ "mpv",      "mpvFloating", NULL,       0,            1,           "5p 5p",   -1 },
+	/* class        , instance      , title     , tags mask , isfloating , floatpos , monitor */
+	{ "Gimp"        , NULL          , NULL      , 0         , 1          , NULL     , -1 },
+	{ "Firefox"     , NULL          , NULL      , 1 << 8    , 0          , NULL     , -1 },
+	{ "qutebrowser" , "qutebrowser" , NULL      , 1         , 0          , NULL     , -1 },
+	{ "ROOT"        , "Browser"     , NULL      , 0         , 1          , NULL     , -1 },
+	{ "ROOT"        , "Canvas"      , NULL      , 1 << 8    , 0          , NULL     , -1 },
+	{ NULL          , NULL          , "_Editor" , 0         , 1          , NULL     , -1 },
+	{ "mpv"         , "mpvFloating" , NULL      , 0         , 1          , "5p 5p"  , -1 },
 };
 
 /* layout(s) */
